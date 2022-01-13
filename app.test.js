@@ -77,8 +77,22 @@ describe("string", () => {
   });
 });
 
-describe("array",()=>{
+describe("array", () => {
   const shoppingArray = ["milk", "apple", "tomato", {}];
   // toContain()=> Use it when you want to check that an item is in an array
   expect(shoppingArray).toContain("milk", {});
-})
+});
+// create a function
+function makeError() {
+  throw new Error("you are  using the wrong JDK ");
+}
+describe("exception", () => {
+  test("compiling android goes as expected", () => {
+    // toThrow() =>Use it to test that a function throws when it is called
+    expect(() => makeError()).toThrow();
+    // or if you have error write this
+    expect(() => makeError()).toThrow(Error);
+    // also you can write text
+    expect(() => makeError()).toThrow("you are  using the wrong JDK ");
+  });
+});
