@@ -22,12 +22,11 @@ test("check object", () => {
 // toBeFalsy()=> you use it when  don't care what a value is and you want to ensure a value is false in a boolean context
 // toBeTruthy()=> you use it when  don't care what a value is and you want to ensure a value is true in a boolean context
 
-
 const typeObj = {
   isTrue: true,
   isFalse: false,
   isNull: null,
-  isUndefined:undefined
+  isUndefined: undefined,
 };
 
 describe("my beverage", () => {
@@ -49,8 +48,37 @@ describe("my beverage", () => {
     expect(typeObj.isNull).toBeNull();
   });
   //  toBeUndefined()=> it use to check that a variable is undefined.
-   test("should be undefined", () => {
-     expect(typeObj.isUndefined).toBeUndefined();
-   });
+  test("should be undefined", () => {
+    expect(typeObj.isUndefined).toBeUndefined();
+  });
 });
 
+describe("numbers", () => {
+  it("two plus two", () => {
+    const value = 2 + 2;
+    expect(value).toBe(4);
+    // result should be grater than or less than
+    expect(value).toBeGreaterThan(3);
+    expect(value).toBeGreaterThanOrEqual(3);
+    expect(value).toBeLessThan(5);
+    expect(value).toBeLessThanOrEqual(5);
+  });
+
+  test("adding floats", () => {
+    const value = 0.2 + 0.3;
+    // toBeCloseTo()=>Use it to compare floating point numbers for approximate equality.
+    expect(value).toBeCloseTo(0.5);
+  });
+});
+describe("string", () => {
+  it("there is no I in team", () => {
+    // toMatch()=>Use it to check that a string matches a regular expression.
+    expect("team").not.toMatch(/I/);
+  });
+});
+
+describe("array",()=>{
+  const shoppingArray = ["milk", "apple", "tomato", {}];
+  // toContain()=> Use it when you want to check that an item is in an array
+  expect(shoppingArray).toContain("milk", {});
+})
