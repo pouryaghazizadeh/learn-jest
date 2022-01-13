@@ -1,0 +1,14 @@
+{
+  "name": "learn-jest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pouryaghazizadeh/learn-jest.git",
+  "author": "pourya ghazizadeh <pourya.gh095@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^27.4.7"
+  }
+}
