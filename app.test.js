@@ -23,23 +23,34 @@ test("check object", () => {
 // toBeTruthy()=> you use it when  don't care what a value is and you want to ensure a value is true in a boolean context
 
 
-const myBeverage = {
-  delicious: true,
-  sour: false,
-  rt:null
+const typeObj = {
+  isTrue: true,
+  isFalse: false,
+  isNull: null,
+  isUndefined:undefined
 };
 
 describe("my beverage", () => {
-  test("is delicious", () => {
-    expect(myBeverage.delicious).toBeTruthy();
+  test("should be false", () => {
+    expect(typeObj.isTrue).toBeTruthy();
   });
 
-  test("is not sour", () => {
-    expect(myBeverage.sour).toBeFalsy();
+  test("should be false", () => {
+    expect(typeObj.isFalse).toBeFalsy();
   });
 
   //   Note: you can add .not after expect()for check everything is not for example
-  test("is not sour", () => {
-    expect(myBeverage.rt).not.toBeTruthy();
+  test("shouldn't be true", () => {
+    expect(typeObj.isNull).not.toBeTruthy();
   });
+
+  // toBeNull()=> So use it when you want to check that something is null.
+  test("should be null", () => {
+    expect(typeObj.isNull).toBeNull();
+  });
+  //  toBeUndefined()=> it use to check that a variable is undefined.
+   test("should be undefined", () => {
+     expect(typeObj.isUndefined).toBeUndefined();
+   });
 });
+
